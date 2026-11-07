@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>English with Purpose: Stay or let go?</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1f2328;--mut:#5f6670;--ln:#e6e8eb;--soft:#f6f7f9;--ac:#3b6fd4;--tn:#eef3fd;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*:before,*:after{box-sizing:inherit}
+html{scroll-padding-top:120px;scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:#fff;border-bottom:1px solid var(--ln);z-index:10}
+.hw{max-width:980px;margin:0 auto;padding:10px 20px;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.br{font-weight:700;letter-spacing:-.01em}
+.pg{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mut)}
+.pbar{width:150px;height:8px;background:var(--ln);border-radius:9px;overflow:hidden}
+.pbar i{display:block;height:100%;width:0;background:var(--ink);transition:width .4s}
+nav{max-width:980px;margin:0 auto;padding:0 20px 10px;display:flex;gap:8px;overflow-x:auto}
+nav a{white-space:nowrap;font-size:13px;color:var(--ink);text-decoration:none;border:1px solid var(--ln);border-radius:99px;padding:4px 12px;background:var(--soft)}
+nav a.ok{background:#e9f6ee;border-color:#9fd4b4}
+main{max-width:980px;margin:0 auto;padding:0 20px 60px}
+.hero{padding:48px 0 24px}
+.hero h1{font-size:clamp(30px,5.5vw,52px);line-height:1.08;letter-spacing:-.03em;margin:0 0 16px}
+.hero p{max-width:62ch;color:var(--mut);font-size:17px;margin:0 0 12px}
+.flow{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.flow span{background:var(--soft);border:1px solid var(--ln);border-radius:99px;padding:4px 14px;font-size:14px}
+.fin{background:#e9f6ee;border:1px solid #9fd4b4;border-radius:16px;padding:16px 20px;margin:16px 0}
+section{padding-top:44px}
+section h2{font-size:26px;letter-spacing:-.02em;margin:0 0 6px;padding-left:14px;border-left:4px solid var(--ac)}
+.lead{color:var(--mut);margin:0 0 18px;max-width:64ch}
+.s-listen{--ac:#3b6fd4;--tn:#eef3fd}.s-vocab{--ac:#2f855a;--tn:#ebf6ef}.s-tofor{--ac:#b7791f;--tn:#fdf5e6}.s-past{--ac:#6b46c1;--tn:#f3eefb}.s-speak{--ac:#c0415a;--tn:#fcedf0}.s-write{--ac:#2c7a7b;--tn:#e8f5f5}.s-nb{--ac:#4a5568;--tn:#f1f3f5}
+.card{border:1px solid var(--ln);border-top:3px solid var(--ac);border-radius:16px;padding:20px;margin-bottom:16px;background:#fff}
+.ch{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.ch h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.bd{font-size:12px;border-radius:99px;padding:2px 10px;background:var(--soft);color:var(--mut);white-space:nowrap}
+.bd.ok{background:#e0f3e8;color:#1f6b42}
+.ins{color:var(--mut);margin:6px 0 10px}
+.pt{font:inherit;font-size:13px;border:1px dashed var(--ac);background:var(--tn);color:var(--ink);border-radius:99px;padding:3px 12px;cursor:pointer;margin-bottom:10px}
+.pt.on{background:var(--ac);color:#fff}
+.ptb{background:var(--tn);border-left:3px solid var(--ac);border-radius:10px;padding:10px 14px;margin:0 0 12px;font-size:15px}
+.q{margin:14px 0;padding-bottom:12px;border-bottom:1px solid var(--soft)}.q p{margin:0 0 8px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+button{font-family:inherit}
+.opt,.chip,.tk{font-size:15px;border:1px solid var(--ln);background:#fff;color:var(--ink);border-radius:12px;padding:8px 14px;cursor:pointer;text-align:left}
+.opt:hover,.chip:hover,.tk:hover{background:var(--tn);border-color:var(--ac)}
+.opt.r,.chip.on{background:var(--tn);border-color:var(--ac);font-weight:600}
+.opt.x{background:#fdf0f0;border-color:#e0a0a0;color:#8a2a2a}
+.btn{font-size:15px;font-weight:600;background:var(--ink);color:#fff;border:0;border-radius:12px;padding:10px 18px;cursor:pointer;margin:8px 8px 0 0;text-decoration:none;display:inline-block}
+.btn.s{background:#fff;color:var(--ink);border:1px solid var(--ink);padding:6px 14px;font-size:14px}
+.btn:disabled{opacity:.4}
+a.btn.l{background:var(--ac)}
+.fb{margin:6px 0 0;font-size:14px;min-height:1px}.fb.g{color:#1f7a4a}.fb.b{color:#b42318}
+.sum{font-weight:600;display:inline-block;margin:8px 0 0}
+.fr input,.fr select,textarea{font:inherit;font-size:15px;border:1px solid #cfd3d8;border-radius:10px;padding:6px 10px;margin:0 6px;background:#fff;color:var(--ink)}
+.fr input{width:min(100%,260px)}.fr>p+input{width:100%;margin:0}
+.fr .r{border-color:#2f855a;background:#ebf6ef}.fr .x{border-color:#d46;background:#fdf0f0}
+textarea{width:100%;margin:6px 0 4px;resize:vertical;line-height:1.5}
+.lb{display:block;font-weight:600;margin-top:12px}
+.bo{min-height:46px;border:1px dashed #bbb;border-radius:12px;padding:6px;display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.bo:empty:before{content:"Tap the words in order";color:#9aa0a6;font-size:14px;padding:4px 8px}
+.bo.r{border-style:solid;border-color:#2f855a;background:#ebf6ef}
+.bp{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+.tk{padding:5px 12px;background:var(--soft)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.grid2{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
+.vc{border:1px solid var(--ln);border-radius:14px;padding:14px;background:var(--soft)}
+.vw{font-weight:700;font-size:17px;display:flex;justify-content:space-between;gap:8px}
+.ve{margin:6px 0;font-size:15px}.vm{background:#fff;border-radius:10px;padding:8px 12px;margin:8px 0;font-size:14px}
+.vm .pp{color:var(--mut)}
+.say{font-size:12px;border:1px solid var(--ln);background:#fff;border-radius:99px;padding:2px 10px;cursor:pointer;color:var(--ink)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;margin:10px 0}
+th,td{border:1px solid var(--ln);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--tn)}
+.tw{overflow-x:auto}
+details{background:var(--soft);border-radius:12px;padding:10px 14px;margin:10px 0}summary{cursor:pointer;font-weight:600}
+.deck{background:var(--tn);border-radius:14px;padding:16px 18px;margin:10px 0;min-height:110px}
+.deck .big{font-size:19px;font-weight:600;margin:0 0 8px;letter-spacing:-.01em}.deck ul{margin:0;padding-left:20px;color:var(--mut)}
+.tm{display:inline-flex;gap:8px;align-items:center;margin-right:6px}.tt{font-variant-numeric:tabular-nums;font-weight:700;min-width:48px}
+.sc{background:var(--soft);border-radius:14px;padding:14px 18px;margin:8px 0}.sc p{margin:4px 0}
+.req{list-style:none;padding:0;margin:8px 0;display:grid;gap:4px;font-size:14.5px}.req li:before{content:"○ ";color:#9aa0a6}.req li.ok{color:#1f7a4a;font-weight:600}.req li.ok:before{content:"● ";color:#2f855a}
+.sc2{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px;margin:8px 0}
+.sc2 label{display:flex;gap:8px;align-items:flex-start;background:var(--soft);padding:8px 12px;border-radius:10px;font-size:14px}
+.nbi{border:1px solid var(--ln);border-radius:12px;padding:10px 14px;margin:8px 0;display:grid;gap:4px}
+.nbi input{width:100%;margin:0}.nbi small{color:var(--mut)}
+.row{display:flex;flex-wrap:wrap;gap:8px}.row input{flex:1 1 160px;margin:0}
+footer{text-align:center;color:var(--mut);font-size:13px;padding:24px}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+@media(max-width:560px){.pbar{width:90px}.card{padding:16px}}
+</style>
+</head>
+<body>
+<header><div class="hw"><span class="br">English with Purpose</span><div class="pg"><div class="pbar"><i id="pf"></i></div><span id="ptx"></span></div></div><nav id="nav"></nav></header>
+<main>
+<div class="hero">
+<h1>Stay or let go?<br>English through Rihanna’s “Stay”</h1>
+<p>Welcome! In this lesson you will listen to a song, discover useful words for work and daily life, review TO / FOR and the Simple Past, and then speak and write about your own experiences.</p>
+<p>Mistakes are part of learning. Whenever something feels difficult, click <b>Ajuda em português</b>.</p>
+<div class="flow"><span>Listen</span><span>Discover words</span><span>Review grammar</span><span>Speak</span><span>Write</span></div>
+</div>
+<div id="fin" class="fin" hidden><b>Lesson complete.</b> You listened, learned, spoke and wrote in English today. Review your notebook again tomorrow for 5 minutes.</div>
+
+<section id="listen" class="s-listen"><h2>1. Listen</h2><p class="lead">First the feeling, then the words.</p><div id="g-listen"></div></section>
+<section id="vocab" class="s-vocab"><h2>2. Vocabulary</h2><p class="lead">Discover 12 expressions you can use at work, with friends and when you travel.</p><div id="g-vocab"></div></section>
+<section id="tofor" class="s-tofor"><h2>3. Grammar: TO or FOR?</h2><p class="lead">Notice the pattern first. Then practise.</p><div id="g-tofor"></div></section>
+<section id="past" class="s-past"><h2>4. Grammar: Simple Past</h2><p class="lead">Talk about finished actions: experiences, news and stories.</p><div id="g-past"></div></section>
+<section id="speak" class="s-speak"><h2>5. Speaking</h2><p class="lead">Speak first, correct later. Use the timer and keep going.</p><div id="g-speak"></div></section>
+<section id="write" class="s-write"><h2>6. Writing</h2><p class="lead">Put vocabulary and grammar together in one short text.</p><div id="g-write"></div></section>
+<section id="nb" class="s-nb"><h2>7. My vocabulary notebook</h2><p class="lead">Your words are saved in this browser.</p><div id="g-nb"></div></section>
+</main>
+<footer>Lyrics are not reproduced in this lesson. Listen to the song on the official video.</footer>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s);
+const E=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
+const sh=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const N=s=>s.toLowerCase().replace(/[’‘]/g,"'").replace(/didn't/g,"did not").replace(/[^a-z' ]/g," ").replace(/\s+/g," ").trim();
+const wc=t=>t.split(/\s+/).filter(Boolean).length;
+const SEC={listen:{n:"Listen",ids:[]},vocab:{n:"Vocabulary",ids:[]},tofor:{n:"TO / FOR",ids:[]},past:{n:"Simple Past",ids:[]},speak:{n:"Speaking",ids:[]},write:{n:"Writing",ids:[]},nb:{n:"Notebook",ids:[]}};
+const DONE=new Set();
+for(const k in SEC){const a=E("a","",SEC[k].n);a.href="#"+k;a.id="n-"+k;$("#nav").append(a)}
+
+function card(sec,id,title,ins,pt){
+ SEC[sec].ids.push(id);
+ const c=E("div","card");c.append(E("div","ch",`<h3>${title}</h3><span class="bd" id="b-${id}">To do</span>`));
+ if(ins)c.append(E("p","ins",ins));
+ if(pt){const b=E("button","pt","Ajuda em português"),x=E("div","ptb",pt);x.hidden=true;b.onclick=()=>{x.hidden=!x.hidden;b.classList.toggle("on",!x.hidden)};c.append(b,x)}
+ const bd=E("div","cb");c.append(bd);$("#g-"+sec).append(c);return bd}
+function mark(id){if(DONE.has(id))return;DONE.add(id);const b=$("#b-"+id);b.textContent="Done";b.classList.add("ok");upd()}
+function upd(){const T=Object.values(SEC).reduce((a,s)=>a+s.ids.length,0),p=Math.round(DONE.size/T*100);
+ $("#pf").style.width=p+"%";$("#ptx").textContent=`${DONE.size} of ${T} activities (${p}%)`;
+ for(const k in SEC){const s=SEC[k],d=s.ids.filter(i=>DONE.has(i)).length,a=$("#n-"+k);a.textContent=`${s.n} ${d}/${s.ids.length}`;a.classList.toggle("ok",d==s.ids.length)}
+ $("#fin").hidden=DONE.size<T}
+
+function mcq(b,id,items,fix){let ok=0;items.forEach(it=>{
+ const q=E("div","q",`<p>${it.q}</p>`),fb=E("p","fb"),w=E("div","opts");let os=it.o.map((t,i)=>[t,i]);if(!fix)os=sh(os);let got=false;
+ os.forEach(([t,i])=>{const bt=E("button","opt",t);bt.onclick=()=>{if(got)return;
+  if(i==it.a){got=true;bt.classList.add("r");fb.className="fb g";fb.textContent="Correct. "+(it.e||"");w.querySelectorAll("button").forEach(x=>x.disabled=true);if(++ok==items.length)mark(id)}
+  else{bt.classList.add("x");bt.disabled=true;fb.className="fb b";fb.textContent="Not quite. Try again."}};w.append(bt)});
+ q.append(w,fb);b.append(q)})}
+
+function fill(b,id,items){
+ const rows=items.map(it=>{const r=E("div","q fr"),fb=E("p","fb");let inp;
+  if(it.o){inp=E("select","",`<option value="">choose</option>`+sh(it.o).map(o=>`<option>${o}</option>`).join(""))}
+  else{inp=E("input");inp.type="text";inp.placeholder="Type here";inp.autocomplete="off";inp.spellcheck=false;inp.setAttribute("autocapitalize","none")}
+  const p=it.t.split("___");
+  if(p.length>1)r.append(E("span","",p[0]),inp,E("span","",p[1]));else r.append(E("p","",it.t),inp);
+  r.append(fb);b.append(r);return{it,inp,fb}});
+ const bt=E("button","btn","Check answers"),sm=E("span","sum");
+ bt.onclick=()=>{let n=0;rows.forEach(({it,inp,fb})=>{const v=N(inp.value),ok=it.a.some(a=>N(a)==v);
+  inp.classList.toggle("r",ok);inp.classList.toggle("x",!ok&&v!=="");fb.className="fb "+(ok?"g":"b");
+  fb.textContent=ok?"Correct. "+(it.e||""):(v?"Not yet. "+(it.h||"Check it again."):"");if(ok)n++});
+  sm.textContent=`${n} / ${rows.length} correct`;if(n==rows.length)mark(id)};
+ b.append(bt,sm)}
+
+function build(b,id,items){let ok=0;items.forEach(it=>{
+ const q=E("div","q",`<p>${it.h}</p>`),out=E("div","bo"),pool=E("div","bp"),fb=E("p","fb"),bt=E("button","btn s","Check"),rs=E("button","btn s","Reset");
+ sh(it.a.split(" ")).forEach(w=>{const t=E("button","tk",w);t.onclick=()=>{(t.parentNode==pool?out:pool).append(t);fb.textContent=""};pool.append(t)});
+ bt.onclick=()=>{const s=[...out.children].map(x=>x.textContent).join(" ");
+  if(s==it.a){fb.className="fb g";fb.textContent="Correct!";out.classList.add("r");if(!q.d){q.d=1;if(++ok==items.length)mark(id)}}
+  else{fb.className="fb b";fb.textContent="Not yet. Tap a word to move it, then check again.";out.classList.remove("r")}};
+ rs.onclick=()=>[...out.children].forEach(x=>pool.append(x));
+ q.append(out,pool,bt,rs,fb);b.append(q)})}
+
+function free(b,id,o){
+ const tas=(o.prompts||[""]).map(p=>{if(p)b.append(E("label","lb",p));const t=E("textarea");t.rows=o.rows||3;t.placeholder=o.ph||"Type your answer here...";b.append(t);return t});
+ const bt=E("button","btn","Check"),fb=E("p","fb");
+ bt.onclick=()=>{const r=o.chk(tas.map(t=>t.value.trim()));fb.className="fb "+(r[0]?"g":"b");fb.textContent=r[1];if(r[0])mark(id)};b.append(bt,fb)}
+
+function timer(b,sec){const d=E("span","tm"),t=E("span","tt",sec+"s"),s=E("button","btn s","Start timer");let iv;
+ s.onclick=()=>{clearInterval(iv);let n=sec;t.textContent=n+"s";s.textContent="Restart";iv=setInterval(()=>{n--;t.textContent=n+"s";if(n<=0){clearInterval(iv);t.textContent="Time!"}},1000)};d.append(t,s);b.append(d)}
+
+let say=t=>{try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang="en-US";u.rate=.9;speechSynthesis.speak(u)}catch(e){}};
+document.addEventListener("click",e=>{const s=e.target.closest(".say");if(s&&s.dataset.s)say(s.dataset.s)});
+
+/* vocabulary data */
+const V=[
+["stay","to remain in a place or with a person","Can you <b>stay</b> a little longer? We’re having fun.","ficar, permanecer",/\bstay/],
+["trust","to believe that someone is honest and reliable","I <b>trust</b> my manager. She keeps her promises.","confiar",/\btrust/],
+["miss (someone)","to feel sad because a person is not with you","I <b>miss</b> my friends from my old job.","sentir falta de",/\bmiss/],
+["let go","to stop holding something or someone","It’s hard to <b>let go</b> of the past.","soltar, deixar ir",/let(ting)? (\w+ )?go/],
+["give up","to stop trying","Don’t <b>give up</b>. Your English is improving.","desistir",/(give|gave|giving) up/],
+["take a chance","to try something even if it is risky","I <b>took a chance</b> and applied for the job.","arriscar, dar uma chance",/chance/],
+["be honest","to tell the truth","Let me <b>be honest</b>: I’m nervous about the meeting.","ser sincero",/honest/],
+["feel safe","to feel protected, without fear","I <b>feel safe</b> when I travel with a good guide.","sentir-se seguro",/\bsafe/],
+["get closer","to become more connected to someone","We <b>got closer</b> after working on the project together.","se aproximar",/closer/],
+["worth it","good enough for the time, money or effort","The trip was expensive, but it was <b>worth it</b>.","valer a pena",/worth/],
+["reach out","to contact someone to ask for help or to start talking","Please <b>reach out</b> if you need help.","entrar em contato",/reach/],
+["move on","to continue your life after something difficult","After the break-up, she <b>moved on</b>.","seguir em frente",/mov(e|ed|ing) on/]];
+const VR=V.map(v=>v[4]);
+
+/* notebook */
+let NB=[];try{NB=JSON.parse(localStorage.getItem("ep_nb")||"[]")}catch(e){}
+const sv=()=>{try{localStorage.setItem("ep_nb",JSON.stringify(NB))}catch(e){}};
+let nbRender=()=>{};
+function addNB(w,m){w=w.trim();if(!w||NB.some(x=>x.w.toLowerCase()==w.toLowerCase()))return false;NB.push({w,m:m.trim(),s:""});sv();nbRender();return true}
+
+/* ===== 1. LISTEN ===== */
+{const i=E("div","card",`<div class="ch"><h3>Today’s song: “Stay” by Rihanna (feat. Mikky Ekko), 2012</h3></div>
+<p class="ins">A slow piano ballad about needing someone close, being afraid to be alone, and being honest about your feelings. The language is simple and the emotions are clear, so it is perfect for learning expressions you can use in real life.</p>
+<p class="ins">Listen twice. First time: <b>feel</b> the song. Second time: <b>notice</b> the words.</p>
+<a class="btn l" href="https://www.youtube.com/results?search_query=Rihanna+Stay+official+video" target="_blank" rel="noopener">Listen to the song (external link, YouTube)</a><a class="btn l" href="https://genius.com/search?q=Rihanna%20Stay" target="_blank" rel="noopener">See the official lyrics (external link, Genius)</a><p class="ins" style="margin-top:10px;font-size:14px">Tip: open the lyrics in a new tab and read while you listen. The lyrics are on the Genius website, not in this lesson.</p>`);$("#g-listen").append(i)}
+{const b=card("listen","pre","Before you listen: predict","Tap the words you expect to hear in a slow, emotional song called “Stay”. Choose at least two.","Antes de ouvir, tente adivinhar quais palavras podem aparecer. Não existe resposta errada: isso prepara seu ouvido para a música.");
+ const w=E("div","chips");["need","alone","party","trust","safe","money","goodbye","honest"].forEach(x=>{const c=E("button","chip",x);c.onclick=()=>c.classList.toggle("on");w.append(c)});
+ const bt=E("button","btn","Save my predictions"),fb=E("p","fb");
+ bt.onclick=()=>{if(w.querySelectorAll(".on").length<2){fb.className="fb b";fb.textContent="Choose at least two words.";return}fb.className="fb g";fb.textContent="Good. Keep them in mind while you listen, then compare.";mark("pre")};b.append(w,bt,fb)}
+{const b=card("listen","comp","Listening comprehension","Listen to the song, then answer.");
+ mcq(b,"comp",[
+ {q:"What kind of song is it?",o:["A slow, emotional ballad","A fast dance song","A rock anthem"],a:0},
+ {q:"What is the main feeling?",o:["Wanting someone to be close","Celebrating a big success","Being angry about work"],a:0},
+ {q:"What does the singer ask the other person to do?",o:["Stay","Leave quickly","Call later"],a:0},
+ {q:"The song suggests that love can be…",o:["beautiful and scary at the same time","only funny","only about money"],a:0,e:"Strong feelings can make us feel both happy and afraid."}])}
+{const b=card("listen","disc","Vocabulary discovery challenge","Listen again. Write 3 words or short phrases you heard and understood. Separate them with commas.","Escreva palavras ou frases curtas que você reconheceu. Não precisa entender tudo. Exemplo: stay, need, alone.");
+ free(b,"disc",{rows:2,ph:"stay, ...",chk:([t])=>{const n=t.split(/[,\n;]+/).filter(x=>x.trim()).length;return n>=3?[1,"Great listening! Add the useful ones to your notebook later."]:[0,"Write at least 3 words or phrases, separated by commas."]}})}
+{const b=card("listen","msg","Meaning and message","Answer in 1–2 full sentences. There are no wrong opinions.","Responda com frases completas, mesmo simples. Exemplo: I think the singer feels afraid because…");
+ free(b,"msg",{prompts:["What do you think the singer needs from the other person?","Is it easy or difficult for you to ask someone to stay? Why?"],ph:"I think...",chk:t=>t.every(x=>wc(x)>=6)?[1,"Nice. You are already expressing opinions in English."]:[0,"Write at least 6 words in each answer."]})}
+
+/* ===== 2. VOCABULARY ===== */
+{const b=card("vocab","vdisc","Discover the words","Read the example and guess the meaning from context. Then reveal it. Use Listen to hear the sentence, and add useful words to your notebook.","Tente entender a palavra pelo contexto antes de revelar o significado. A tradução em português aparece dentro do cartão só como apoio.");
+ const g=E("div","grid2");let seen=new Set();
+ V.forEach((v,i)=>{const c=E("div","vc",`<div class="vw"><span>${v[0]}</span><button class="say" data-s="${v[2].replace(/<[^>]+>/g,"")}">Listen</button></div><p class="ve">“${v[2]}”</p><div class="vm" hidden><div>${v[1]}</div><div class="pp">Português: ${v[3]}</div></div>`),
+  r=E("button","btn s","Reveal meaning"),a=E("button","btn s","Add to notebook");
+  r.onclick=()=>{$(".vm",c).hidden=false;r.hidden=true;seen.add(i);if(seen.size==V.length)mark("vdisc")};
+  a.onclick=()=>{if(addNB(v[0],v[1]))a.textContent="Added";else a.textContent="Already in notebook"};
+  c.append(r,a);g.append(c)});b.append(g)}
+{const b=card("vocab","vmatch","Practice 1 · Match the words to their meanings","Choose the correct meaning.","Escolha o significado em inglês simples que combina com cada expressão.");
+ const M=[["trust","to believe someone is honest and reliable"],["miss","to feel sad because a person is not with you"],["let go","to stop holding something or someone"],["give up","to stop trying"],["take a chance","to try something risky"],["worth it","good enough for the effort or money"],["reach out","to contact someone to ask for help"],["move on","to continue your life after something difficult"]];
+ fill(b,"vmatch",M.map(m=>({t:`<b>${m[0]}</b>`,o:M.map(x=>x[1]),a:[m[1]]})))}
+{const b=card("vocab","vfill","Practice 2 · Complete the sentences","Choose the best expression.");
+ const O=["give up","trust","reach out","miss","worth it","take a chance"];
+ fill(b,"vfill",[["The journey was long, but the view was ___.","worth it"],["I ___ my family when I travel for work.","miss"],["If you have questions, please ___ to me anytime.","reach out"],["I’m nervous about speaking, but I will ___ and join the meeting.","take a chance"],["A good team must ___ each other.","trust"],["Learning is hard, but never ___.","give up"]].map(x=>({t:x[0],o:O,a:[x[1]]})))}
+{const b=card("vocab","vchoose","Practice 3 · Choose the right word in context","Read the situation and choose.");
+ mcq(b,"vchoose",[
+ {q:"The project ended badly. Now the team wants to ___ and start new goals.",o:["move on","give up","miss"],a:0},
+ {q:"My new manager is kind and open. I ___ safe sharing my ideas.",o:["feel","take","reach"],a:0},
+ {q:"“Be honest with me” means…",o:["Tell me the truth","Tell me a joke","Tell me later"],a:0},
+ {q:"Which expression means “try, even if it is risky”?",o:["take a chance","let go","worth it"],a:0}])}
+{const b=card("vocab","vsent","Practice 4 · Create your own sentences","Write at least 5 sentences. Use at least 5 different new expressions.","Crie frases sobre a sua vida. Use pelo menos 5 expressões diferentes da lista. Exemplo: I miss my city when I travel.");
+ free(b,"vsent",{rows:6,ph:"I miss...\nI trust...",chk:([t])=>{const n=VR.filter(r=>r.test(t.toLowerCase())).length;return n>=5?[1,`Excellent! You used ${n} different expressions.`]:[0,`I found ${n} expressions. Use at least 5 different ones.`]}})}
+{const b=card("vocab","vconv","Practice 5 · Mini conversation","Write a short dialogue (4+ lines) between you and a colleague after a difficult day. Use at least 3 new expressions. Then read it aloud.","Escreva um diálogo curto, como uma conversa real no trabalho. Depois leia em voz alta, com entonação natural.");
+ free(b,"vconv",{rows:6,ph:"You: Hi, are you OK?\nColleague: ...",chk:([t])=>{const n=VR.filter(r=>r.test(t.toLowerCase())).length,l=t.split(/\n/).filter(x=>x.trim()).length;return n>=3&&l>=4?[1,"Great dialogue! Now read it aloud twice."]:[0,`Expressions found: ${n} (need 3). Lines: ${l} (need 4).`]}})}
+
+/* ===== 3. TO / FOR ===== */
+{const b=card("tofor","gnotice","Notice the pattern","These sentences are about the story and feelings in “Stay”. Read the two groups.","Observe os exemplos antes da regra. TO costuma indicar para onde algo vai (destino) ou o objetivo antes de um verbo. FOR costuma indicar para quem, por que motivo ou para que serve.");
+ b.innerHTML+=`<div class="sc"><p><b>Group A:</b> The singer talks <b>to</b> her partner. · She sends a message <b>to</b> him. · She calls him <b>to</b> ask him to stay.</p><p><b>Group B:</b> She needs him <b>for</b> support. · This slow song is <b>for</b> people who are afraid to be alone. · Thanks <b>for</b> being honest.</p></div>`;
+ mcq(b,"gnotice",[{q:"Group A shows…",o:["direction or destination","a reason","a person who receives something"],a:0},{q:"Group B shows…",o:["who benefits, a reason, or intended use","only places","only time"],a:0}]);
+ b.append(E("div","",`<details><summary>See the rule and comparison table</summary><div class="tw"><table><tr><th>Use</th><th>TO</th><th>FOR</th></tr>
+ <tr><td>Place / direction</td><td>I’m going <b>to</b> the airport.</td><td>—</td></tr>
+ <tr><td>Purpose</td><td>I called <b>to ask</b> a question. (to + verb)</td><td>I called <b>for</b> information. (for + noun)</td></tr>
+ <tr><td>Beneficiary</td><td>—</td><td>A gift <b>for</b> you.</td></tr>
+ <tr><td>Reason</td><td>—</td><td>Thanks <b>for</b> waiting. / Sorry <b>for</b> being late.</td></tr>
+ <tr><td>Intended use</td><td>—</td><td>A bag <b>for</b> travel.</td></tr>
+ <tr><td>Receiver</td><td>Send the file <b>to</b> the client.</td><td>Buy a gift <b>for</b> the client.</td></tr></table></div></details>`))}
+{const b=card("tofor","gfill","Fill in the blanks","Choose TO or FOR.");
+ fill(b,"gfill",[["In “Stay”, the singer talks ___ her partner.","to","The person who receives the words."],["She is afraid, and she needs him ___ support.","for","Reason / what she needs him for."],["She calls him ___ ask him to stay.","to","Purpose with a verb: to + verb."],["This ballad is perfect ___ listening on a quiet night.","for","Intended use."],["Thank you ___ being honest with me.","for","Reason."],["He sends a message ___ her at night.","to","Receiver of something sent."],["She sings this song ___ someone she does not want to lose.","for","Beneficiary."],["She wants to go back ___ him.","to","Direction / destination (a person)."]].map(x=>({t:x[0],o:["to","for"],a:[x[1]],e:x[2],h:"Think: destination (TO) or beneficiary / reason / use (FOR)?"})))}
+{const b=card("tofor","gbuild","Build the sentences","Tap the words in the correct order.","Toque nas palavras para formar a frase. Se errar, toque na palavra para tirá-la, ou use Reset.");
+ build(b,"gbuild",[{h:"The singer talks. Her partner listens.",a:"She talks to her partner."},{h:"She needs him. The reason: support.",a:"She needs him for support."},{h:"She calls him. The purpose: ask him to stay.",a:"She calls him to ask him to stay."},{h:"The song is a gift. People who are afraid receive it.",a:"This song is for people who are afraid."}])}
+{const b=card("tofor","gspeak","Speaking challenge: explain your choice","Answer out loud for 45 seconds. Say TO or FOR and explain why.","Fale em voz alta e explique a escolha. Exemplo: “I use TO because it is a destination.”");
+ b.append(E("div","deck",`<p class="big">1. Who does the singer talk to? Say: “She talks to… because…”<br>2. Who do you rely on for support? Say: “I need… for…” Explain why you chose FOR.<br>3. Say: “I listen to music to… and for…” Explain why you chose TO or FOR.</p>`));timer(b,45);
+ const d=E("button","btn","I finished this challenge");d.onclick=()=>mark("gspeak");b.append(d)}
+
+/* ===== 4. SIMPLE PAST ===== */
+{const b=card("past","pnotice","Notice the pattern","These examples tell the story behind “Stay”. Read them.","Observe: verbos regulares terminam em -ed no passado. Nas frases negativas e nas perguntas usamos DID e o verbo volta para a forma base (did not call, Did you see?).");
+ b.innerHTML+=`<div class="sc"><p>Imagine the story behind the song: She <b>needed</b> him last night. · He <b>left</b> yesterday.</p><p>She <b>didn’t feel</b> safe. · <b>Did</b> he <b>stay</b> with her?</p></div>`;
+ mcq(b,"pnotice",[{q:"After DID or DIDN’T, the verb is…",o:["in the base form (feel, stay)","in the -ed form (feeled, stayed)","always irregular"],a:0},{q:"Regular verbs usually end in…",o:["-ed","-ing","-s"],a:0}]);
+ b.append(E("div","",`<details><summary>See the rule and examples</summary><div class="tw"><table><tr><th>Type</th><th>Examples</th></tr>
+ <tr><td>Regular</td><td>stay → stayed · need → needed · miss → missed · cry → cried · love → loved</td></tr>
+ <tr><td>Irregular</td><td>feel → felt · tell → told · leave → left · come → came · know → knew · say → said · give → gave · take → took · hurt → hurt (no change)</td></tr>
+ <tr><td>Affirmative</td><td>She stayed with him.</td></tr><tr><td>Negative</td><td>She didn’t stay with him.</td></tr><tr><td>Question</td><td>Did she stay with him?</td></tr>
+ <tr><td>Time words</td><td>yesterday · last week · last night · two days ago · in 2020 · this morning (finished)</td></tr></table></div></details>`))}
+{const b=card("past","pid","Past or present?","Choose when the situation happens.","Decida se a ação acontece agora/sempre (presente) ou já terminou (passado). Procure -ed, verbos irregulares e expressões como yesterday.");
+ mcq(b,"pid",[["The singer needs her partner.",0],["She felt afraid last night.",1],["He stays with her on weekends.",0],["She asked him to stay yesterday.",1],["We listen to this song every week.",0],["I cried when I heard it last year.",1]].map(x=>({q:x[0],o:["Present","Past"],a:x[1]})),true)}
+{const b=card("past","ptrans","Transformation challenge","Rewrite each sentence in the Simple Past, following the instruction.","Reescreva no passado simples. Lembre: negativa = did not / didn’t + verbo base; pergunta = Did + sujeito + verbo base.");
+ fill(b,"ptrans",[
+ ["She needs him. (add: yesterday)",["She needed him yesterday","Yesterday she needed him"]],
+ ["He leaves the house. (add: last night)",["He left the house last night","Last night he left the house"]],
+ ["She feels safe. (negative, last week)",["She didn’t feel safe last week","Last week she didn’t feel safe"]],
+ ["He tells her the truth. (add: two days ago)",["He told her the truth two days ago","Two days ago he told her the truth"]],
+ ["She asks him to stay. (question, yesterday)",["Did she ask him to stay yesterday","Yesterday did she ask him to stay"]],
+ ["They take a chance. (question)",["Did they take a chance"]]
+ ].map(x=>({t:x[0],a:x[1],h:"Check: did / didn’t + base verb, or an irregular past form."})))}
+
+/* ===== 5. SPEAKING ===== */
+{const b=card("speak","s1","Activity 1 · Let’s Talk About It!","Press the button for a question. Answer out loud, then use the follow-up questions to keep going.","Responda em voz alta. Não pare para corrigir. Se faltar uma palavra, explique com outras palavras. Use: I think… / For me… / Once, I…");
+ const Q=[["Have you ever asked someone to stay? What happened?",["How did you feel?","Would you do it again?"]],["Is it easy for you to be honest about your feelings?",["Who do you trust the most?","How do you show trust at work?"]],["What do you do when you miss someone?",["Do you reach out first?","What do you say?"]],["Tell me about a time you took a chance. Was it worth it?",["What did you do?","What did you learn?"]],["When is it right to give up, and when is it better to keep trying?",["Can you give an example?","What helps you keep going?"]],["Which artist do you listen to when you need to move on after a bad day?",["Rihanna, Coldplay, Bruno Mars…?","What does the music do for you?"]]];
+ const d=E("div","deck",`<p class="big">Press “Next question” to start.</p>`);let i=-1;const seen=new Set();
+ const nx=E("button","btn","Next question");nx.onclick=()=>{i=(i+1)%Q.length;seen.add(i);d.innerHTML=`<p class="big">${Q[i][0]}</p><ul>${Q[i][1].map(x=>`<li>${x}</li>`).join("")}</ul>`};
+ const f=E("button","btn s","I finished this activity"),fb=E("p","fb");f.onclick=()=>{if(seen.size<3){fb.className="fb b";fb.textContent="Try at least 3 questions first.";return}fb.textContent="";mark("s1")};
+ b.append(d,nx);timer(b,45);b.append(f,fb)}
+{const b=card("speak","s2","Activity 2 · Speak Without Overthinking!","Read the situation. Speak for 60 seconds. Tap each expression when you use it. Use at least 3.","Imagine a conversa real. Não memorize um texto: fale o que vier à cabeça. Toque em cada expressão quando usá-la. Precisa usar pelo menos 3.");
+ const S=[{c:"You: a project coordinator. Ms. Hall: your manager, busy but kind.",s:"A client report is not ready because a colleague is sick. The deadline is tomorrow.",g:"Be honest about the problem, ask for help, and propose a solution.",e:["Let me be honest…","I trust my team…","I’d like to reach out to…","It will be worth it…","I won’t give up…"]},
+ {c:"You: a traveller arriving at night. Daniel: a polite but strict hotel receptionist.",s:"Your online reservation is missing and the hotel is full.",g:"Explain calmly, ask for another option, and make sure the area is safe.",e:["To be honest…","I want to feel safe…","I booked it two days ago.","Could you reach out to another hotel?","I’d take a chance on…"]}];
+ let k=0;const box=E("div","sc"),chips=E("div","chips"),fb=E("p","fb"),sw=E("button","btn s","Switch scenario");
+ const load=()=>{const s=S[k];box.innerHTML=`<p><b>Characters:</b> ${s.c}</p><p><b>Situation:</b> ${s.s}</p><p><b>Your goal:</b> ${s.g}</p><p><b>Optional support (tap when you use one):</b></p>`;chips.innerHTML="";
+  s.e.forEach(x=>{const c=E("button","chip",x);c.onclick=()=>{c.classList.toggle("on");const n=chips.querySelectorAll(".on").length;fb.className="fb g";fb.textContent=`${n} expression(s) used`;if(n>=3){fb.textContent+=". Great, you reached the goal!";mark("s2")}};chips.append(c)});fb.textContent=""};
+ sw.onclick=()=>{k=(k+1)%S.length;load()};load();b.append(box,chips);timer(b,60);b.append(sw,fb)}
+
+/* ===== 6. WRITING ===== */
+{const b=card("write","w","Write a short paragraph (6–8 sentences)","Write about a time you took a chance, helped someone, or asked someone to stay. A work situation is also fine.","Escreva 6 a 8 frases. Use 5 expressões novas, pelo menos 2 vezes TO ou FOR, e 3 verbos no passado. O quadro abaixo confere automaticamente (é aproximado).");
+ const ta=E("textarea");ta.rows=9;ta.placeholder="Last year, I took a chance and...";
+ const IRR=new Set("was were went saw had bought took met felt gave made told said came got wrote found left thought knew did ate drove flew lost won".split(" "));
+ const ul=E("ul","req"),st=E("p","fb"),L=["Use at least 5 new expressions","Use TO or FOR at least 2 times","Use at least 3 Simple Past verbs","Write 6–8 sentences"].map(x=>{const l=E("li","",x);ul.append(l);return l});
+ const sc=E("div","sc2");["Grammar: TO/FOR and past forms are correct","Grammar: I used did/didn’t + base verb where needed","Vocabulary: I used the new expressions naturally","Organization: beginning, middle and end","Organization: each sentence has a clear idea","Spelling: I read it again and fixed mistakes"].forEach(x=>{const l=E("label","",`<input type="checkbox"> ${x}`);l.firstChild.onchange=ev;sc.append(l)});
+ let ok4=[0,0,0,0];
+ function ev(){const t=ta.value,l=t.toLowerCase(),tk=l.match(/[a-z']+/g)||[],sn=(t.match(/[^.!?]+[.!?]+/g)||[]).length,
+  v=VR.filter(r=>r.test(l)).length,tf=tk.filter(w=>w=="to"||w=="for").length,ps=tk.filter(w=>IRR.has(w)||(/\w{2,}ed$/.test(w)&&!/^(need|speed|indeed|feed|seed|breed|proceed|exceed|succeed)$/.test(w))).length;
+  ok4=[v>=5,tf>=2,ps>=3,sn>=6&&sn<=8];L.forEach((x,i)=>x.classList.toggle("ok",ok4[i]));
+  st.className="fb";st.textContent=`Words: ${wc(t)} · Sentences: ${sn} · Expressions: ${v} · TO/FOR: ${tf} · Past verbs: ${ps}`;
+  if(ok4.every(Boolean)&&[...sc.querySelectorAll("input")].every(x=>x.checked))mark("write")}
+ ta.oninput=ev;
+ const cp=E("button","btn s","Copy my text"),cf=E("span","fb");cp.onclick=()=>{ta.select();try{navigator.clipboard.writeText(ta.value);cf.textContent=" Copied."}catch(e){document.execCommand("copy");cf.textContent=" Copied."}};
+ b.append(ta,E("p","ins","Requirements (checked automatically):"),ul,st,E("p","lb","Self-check: tick each box after you review your text."),sc,cp,cf)}
+
+/* ===== 7. NOTEBOOK ===== */
+{const b=card("nb","nb","My vocabulary notebook","Collect at least 5 words. Write your own example sentence for each one.","Use este caderno para guardar as palavras que você quer lembrar. Escreva uma frase sobre a sua vida: isso ajuda muito a memorizar.");
+ const lst=E("div"),f=E("div","row"),w=E("input"),m=E("input"),a=E("button","btn s","Add word"),cb=E("button","btn s","Copy notebook"),fb=E("p","fb");
+ w.placeholder="New word or expression";m.placeholder="Meaning (your own words)";f.append(w,m,a);
+ nbRender=()=>{lst.innerHTML="";if(!NB.length)lst.append(E("p","ins","Your notebook is empty. Add words from the vocabulary cards or type your own."));
+  NB.forEach((x,i)=>{const d=E("div","nbi",`<div><b>${x.w}</b> <button class="say" data-s="${x.w}">Listen</button> <button class="say" data-d="1">Remove</button></div><small>${x.m||""}</small>`),s=E("input");s.placeholder="My own sentence...";s.value=x.s||"";s.oninput=()=>{x.s=s.value;sv()};
+   $("[data-d]",d).onclick=()=>{NB.splice(i,1);sv();nbRender()};d.append(s);lst.append(d)});
+  fb.className="fb";fb.textContent=`${NB.length} word(s) saved`;if(NB.length>=5)mark("nb")};
+ a.onclick=()=>{if(!w.value.trim()){fb.className="fb b";fb.textContent="Type a word first.";return}if(addNB(w.value,m.value)){w.value=m.value=""}else{fb.className="fb b";fb.textContent="That word is already in your notebook."}};
+ cb.onclick=()=>{const t=NB.map(x=>`${x.w} - ${x.m} - ${x.s}`).join("\n");try{navigator.clipboard.writeText(t);fb.className="fb g";fb.textContent="Notebook copied."}catch(e){}};
+ b.append(lst,f,cb,fb);nbRender()}
+upd();
+</script>
+</body>
+</html>
