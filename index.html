@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>English Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg1:#fdf4ff;--bg2:#eef2ff;--card:rgba(255,255,255,.85);--text:#2d2540;--muted:#7b7192;
+  --accent:#8b5cf6;--accent2:#ec4899;--line:#e9defa;--chip:#f6f0ff;--shadow:0 10px 30px rgba(139,92,246,.12)
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg1:#1a1426;--bg2:#141a2e;--card:rgba(38,30,58,.85);--text:#f3effc;--muted:#b0a5c6;
+  --accent:#a78bfa;--accent2:#f472b6;--line:#3a2f55;--chip:#2e2447;--shadow:0 10px 30px rgba(0,0,0,.3)
+}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;font-family:'Poppins',system-ui,sans-serif;color:var(--text);
+  background:linear-gradient(160deg,var(--bg1),var(--bg2));background-attachment:fixed;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  padding:env(safe-area-inset-top,0) 16px env(safe-area-inset-bottom,0)}
+header{padding:56px 0 20px;max-width:640px}
+.badge{display:inline-block;font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--accent);background:var(--chip);border:1px solid var(--line);padding:6px 14px;border-radius:999px}
+h1{margin:18px 0 8px;font-size:clamp(2rem,6vw,3rem);font-weight:700;line-height:1.15;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+header p{margin:0;color:var(--muted);font-size:1.02rem}
+nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:860px;margin:26px 0 34px}
+nav button{font:inherit;font-size:.85rem;border:1px solid var(--line);background:var(--card);color:var(--text);
+  padding:9px 16px;border-radius:999px;cursor:pointer;transition:.2s}
+nav button:hover{border-color:var(--accent)}
+nav button.on{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border-color:transparent}
+main{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;width:100%;max-width:1120px;padding-bottom:56px}
+section{width:340px;max-width:100%;background:var(--card);border:1px solid var(--line);border-radius:24px;
+  padding:28px 22px;box-shadow:var(--shadow);backdrop-filter:blur(8px);
+  display:flex;flex-direction:column;align-items:center;transition:transform .2s}
+section:hover{transform:translateY(-4px)}
+.icon{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;font-size:1.7rem;
+  background:var(--chip);border:1px solid var(--line);margin-bottom:12px}
+h2{margin:0;font-size:1.1rem;font-weight:600}
+section small{color:var(--muted);margin-top:4px;font-size:.82rem}
+ul{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+a{display:inline-block;padding:8px 14px;border-radius:999px;background:var(--chip);border:1px solid var(--line);
+  color:var(--text);text-decoration:none;font-size:.82rem;font-weight:500;transition:.2s}
+a:hover{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border-color:transparent}
+footer{color:var(--muted);font-size:.8rem;padding-bottom:28px}
+.hide{display:none}
+</style>
+</head>
+<body>
+<header>
+  <span class="badge">Learning Hub</span>
+  <h1>English Hub</h1>
+  <p>Escolha um tema e comece a praticar seu inglês</p>
+</header>
+<nav id="filters"></nav>
+<main id="grid"></main>
+<footer>Feito com 💜 para praticar inglês</footer>
+
+<script>
+// Cada link abre a pasta do site dentro deste mesmo repositório
+const BASE = "";
+
+const categories = [
+  {icon:"✈️", title:"Viagens", desc:"Aeroporto, viagens e situações fora de casa", items:[
+    ["Travel Basics","travel-basics"],
+    ["Travel: Vitória","travel-vitoria"],
+    ["Everyday Situations in a Trip","everyday-situations-in-a-trip"],
+    ["Prepositions: Flight Attendant","prepositions-flight-attendant"]]},
+  {icon:"💬", title:"Conversação e Small Talk", desc:"Como falar no dia a dia", items:[
+    ["Ordering Coffee","ordering-coffee"],
+    ["Ordering Coffee (Paty)","ordering-coffee-paty"],
+    ["Coffee Shop Friends","coffee-shop-friends"],
+    ["Small Talk 1","small-talk-1"],
+    ["Small Talk 2","small-talk-2"],
+    ["Fav Book","fav-book"]]},
+  {icon:"🏠", title:"Rotina e Vida Doméstica", desc:"Hábitos e tarefas de casa", items:[
+    ["Household Chores","household-chores"],
+    ["Household Chores 2","household-chores-2"],
+    ["Habits","habits"]]},
+  {icon:"💼", title:"Inglês Profissional", desc:"Trabalho e networking", items:[
+    ["Networking","networking"],
+    ["Global Meeting Review","global-meeting-review"]]},
+  {icon:"📚", title:"Vocabulário Temático", desc:"Listas de palavras por tema", items:[
+    ["Airport Vocab","airport-vocab"],
+    ["Kitchen","kitchen"],
+    ["Halloween","halloween"]]},
+  {icon:"🎤", title:"Blogs de Fãs e Música", desc:"Inglês com seus artistas favoritos", items:[
+    ["Taylor Swift","taylor-swift"],
+    ["Shawn Mendes","shawn-mendes"],
+    ["BTS","bts"],
+    ["Rihanna","rihanna"]]},
+  {icon:"🎬", title:"Projetos Diana", desc:"Série de atividades Diana", items:[
+    ["Diana 1.2","diana-1-2"],
+    ["Diana 2","diana-2"]]}
+];
+
+const grid = document.getElementById("grid");
+const filters = document.getElementById("filters");
+
+function show(i){
+  [...grid.children].forEach((s,idx)=>s.classList.toggle("hide", i!==-1 && idx!==i));
+  [...filters.children].forEach((b,idx)=>b.classList.toggle("on", idx===i+1));
+}
+
+const all = document.createElement("button");
+all.textContent = "Todos";
+all.onclick = ()=>show(-1);
+filters.appendChild(all);
+
+categories.forEach((c,i)=>{
+  const b = document.createElement("button");
+  b.textContent = c.icon+" "+c.title;
+  b.onclick = ()=>show(i);
+  filters.appendChild(b);
+
+  const s = document.createElement("section");
+  s.innerHTML = '<div class="icon">'+c.icon+'</div><h2>'+c.title+'</h2><small>'+c.desc+'</small><ul>'+
+    c.items.map(x=>'<li><a href="'+BASE+x[1]+'/" target="_blank" rel="noopener">'+x[0]+'</a></li>').join("")+'</ul>';
+  grid.appendChild(s);
+});
+show(-1);
+</script>
+</body>
+</html>
